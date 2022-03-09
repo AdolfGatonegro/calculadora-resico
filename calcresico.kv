@@ -1,0 +1,28 @@
+<CalcAppRoot>
+
+	calc_field: calc_field
+
+	orientation: 'vertical'
+	TextInput:
+		id: calc_field
+		size_hint: (1,0.5)
+		font_size: 64
+		readonly: False
+		disabled: False
+		input_type: 'number'
+		input_filter: 'float'
+		text: '0.0'
+	GridLayout:
+		rows: 1
+		columns: 2
+		padding: 10
+		spacing: 10
+		size_hint: (1, 0.5)
+		Button:
+			text: "Neto"
+			font_size: 32
+			on_press: root.calc_eval_net()
+		Button:
+			text: "Bruto"
+			font_size: 32
+			on_press: root.calc_eval_gross()
