@@ -3,26 +3,99 @@
 	calc_field: calc_field
 
 	orientation: 'vertical'
+	Label:
+		size_hint: (1, 0.15)
+		text: 'Calculadora RESICO'
+		text_size: self.size
+		font_size: 24
+		halign: 'center'
+		valign: 'middle'
 	TextInput:
 		id: calc_field
-		size_hint: (1,0.5)
-		font_size: 64
-		readonly: False
-		disabled: False
+		size_hint: (1, 0.2)
+		hint_text: '0'
+		font_size: 52
 		input_type: 'number'
 		input_filter: 'float'
-		text: '0.0'
+		multiline: False
+		readonly: True
+		disabled: False
+		is_focusable: True
+		padding: 10
+		halign: 'right'
 	GridLayout:
-		rows: 1
-		columns: 2
+		rows: 4
+		columns: 3
 		padding: 10
 		spacing: 10
-		size_hint: (1, 0.5)
+		size_hint: (1, 0.4)
 		Button:
-			text: "Neto"
+			text: "1"
 			font_size: 32
+			on_press: root.calc_input_symbol('1')
+		Button:
+			text: "2"
+			font_size: 32
+			on_press: root.calc_input_symbol('2')
+		Button:
+			text: "3"
+			font_size: 32
+			on_press: root.calc_input_symbol('3')
+		Button:
+			text: "4"
+			font_size: 32
+			on_press: root.calc_input_symbol('4')
+		Button:
+			text: "5"
+			font_size: 32
+			on_press: root.calc_input_symbol('5')
+		Button:
+			text: "6"
+			font_size: 32
+			on_press: root.calc_input_symbol('6')
+		Button:
+			text: "7"
+			font_size: 32
+			on_press: root.calc_input_symbol('7')
+		Button:
+			text: "8"
+			font_size: 32
+			on_press: root.calc_input_symbol('8')
+		Button:
+			text: "9"
+			font_size: 32
+			on_press: root.calc_input_symbol('9')
+		Button:
+			text: "C"
+			font_size: 32
+			on_press: root.calc_field_clear()
+		Button:
+			text: "0"
+			font_size: 32
+			on_press: root.calc_input_symbol('0')
+		Button:
+			text: "."
+			font_size: 32
+			on_press: root.calc_input_symbol('.')
+	GridLayout:
+		rows: 1
+		columns: 3
+		padding: 10
+		spacing: 10
+		size_hint: (1, 0.15)
+		Button:
+			text: "Honorarios\nNetos"
+			font_size: 24
+			halign: 'center'
 			on_press: root.calc_eval_net()
 		Button:
-			text: "Bruto"
-			font_size: 32
+			text: "Honorarios\nBrutos"
+			font_size: 24
+			halign: 'center'
 			on_press: root.calc_eval_gross()
+	Label:
+		size_hint: (1, 0.1)
+		font_size: 14
+		markup: True
+		text: 'Hello [b]Gatonegro[/b]'
+		color: '#999999'
