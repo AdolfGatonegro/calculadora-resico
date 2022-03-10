@@ -19,11 +19,11 @@
 '''
 import kivy
 from kivy.app import App
-from kivy.core.window import Window
+# from kivy.core.window import Window
 from kivy.uix.boxlayout import BoxLayout
 
 kivy.require('2.0.0')
-Window.size = (360, 740)
+# Window.size = (360, 740)
 
 class CalcAppRoot(BoxLayout):
 
